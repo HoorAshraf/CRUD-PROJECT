@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quotes App</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class=" text-black mb-3">Quote of the Day</h1>
+        <p class="press lead pb-3 pt-4">Press the button below to receive a random quote!</p>
+        <button
+          id="new-quote"
+          class="btn text-white  rounded-0 border border-2 border-black py-4 btn-lg mb-4"
+          onclick="generateQuote()"
+        >
+          New Quote
+        </button>
+        <p id="quote" >"The best revenge is massive success."</p>
+        <p id="author" >-- Frank Sinatra</p>
+      </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
