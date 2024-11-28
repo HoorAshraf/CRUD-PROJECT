@@ -3,28 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/bookmark.jpg">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Quotes App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+
+
+
+
+
+    <title>Bookmark</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class=" text-black mb-3">Quote of the Day</h1>
-        <p class="press lead pb-3 pt-4">Press the button below to receive a random quote!</p>
-        <button
-          id="new-quote"
-          class="btn text-white  rounded-0 border border-2 border-black py-4 btn-lg mb-4"
-          onclick="generateQuote()"
-        >
-          New Quote
-        </button>
-        <p id="quote" >"The best revenge is massive success."</p>
-        <p id="author" >-- Frank Sinatra</p>
-      </div>
+  <div class="container d-flex justify-content-between align-items-center flex-column py-5">
+    <h1 class="title pt-2">Bookmarker</h1>
+    <div class="dotted-line w-100 position-relative mt-5"></div> 
+    <div class="bookmarker-card w-100 py-4 ">
+      <p class="text-center"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></p>
+      <form class="w-100 fw-semibold" id="bookmarkForm">
+        <div class="input-container">
+          <label class="pb-2 label" for="siteName">
+            <i class="fa-solid fa-book pe-2"></i> Site Name
+            <span class="valid-icon"><i class="fa-solid fa-check-circle"></i></span> <!-- Valid icon -->
+            <span class="invalid-icon"><i class="fa-solid fa-times-circle"></i></span> <!-- Invalid icon -->
+          </label>
+          <input class="form-control pb-2 mb-2" type="text" id="siteName" placeholder="Bookmark Name" required>
+        </div>
+      
+        <div class="input-container">
+          <label class="pt-3 pb-2 label" for="siteURL">
+            <i class="fa-solid fa-link pe-2"></i> Site URL
+            <span class="valid-icon"><i class="fa-solid fa-check-circle"></i></span> <!-- Valid icon -->
+            <span class="invalid-icon"><i class="fa-solid fa-times-circle"></i></span> <!-- Invalid icon -->
+          </label>
+          <input class="form-control mb-3" type="url" id="siteURL" placeholder="Website URL" required>
+        </div>
+      
+        <div class="text-center py-3">
+          <button class="btn btn-danger text-white px-5 submit" type="submit">Submit</button>
+        </div>
+        <div class="dotted-line w-100 position-relative mt-2"></div> 
+      </form>
+    </div>
+
+    <table class="w-100 mt-0 text-center">
+      <thead>
+        <tr class="table border border-1">
+          <th class="py-2 px-4">Index</th>  
+          <th class="py-2 px-4">Website Name</th>
+          <th class="py-2 px-4">Visit</th>
+          <th class="py-2 px-4">Delete</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white" id="bookmarkList">
+        <!-- table rows here -->
+      </tbody>
+    </table>
+
+    <form id="bookmarkForm" novalidate>
+      <!-- form inputs and submit button -->
+    </form>
+    
+    
+  </div>
+ 
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="index.js"></script>
 </body>
+
 </html>

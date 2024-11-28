@@ -1,34 +1,234 @@
 body {
-  text-align: center;
+ background-color: #F7ECDE;
+}
+.title {
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+  color: #352e28;
+  position: relative; 
+  z-index: 1; 
+
+}
+::selection {
+  background-color: #fec260;
+  color: #352e28;
+}
+.title::before {
+  content: ''; 
+  position: absolute;
+  bottom:2px; 
+  left: 0;
+  right: 0;
+  height: 28%; 
+  background-color: #FEC260; 
+  z-index: -1; 
+  transition: height 0.3s ease; 
 }
 
-#new-quote:hover {
-  background-color: rgb(0, 128, 0);
-  transition: none; 
+.title:hover::before {
+  height: 56%; 
 }
 
-h1 {
-  font-size: 80px;
-  font-family: Impact;
-  font-weight: 700;
+.dotted-line {
+ 
+  border-bottom: 2px dotted #352e28; 
+
+
+}
+.bookmarker-card p {
+  font-weight: 500; 
+  background-clip: text; 
+  font-family: "Righteous", cursive;
+  font-size: 25px;
+  background: linear-gradient(120deg, rgba(60,165,92,1) 30%, rgba(181,172,73,1) 65%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.press {
-  font-size: 35px;
-  font-family: 'Times New Roman', Times, serif;
+
+.label {
+  font-family: 
+  "PT Sans Caption",sans-serif;
+  font-size: 16px;
+}
+
+.input-container {
+  position: relative;
+}
+
+/* Green Tick for valid input */
+.form-control.valid {
+  border-color: green;
+  box-shadow: 0 0 5px green;
+}
+
+.form-control.valid + .valid-icon {
+  display: block; /* Show the valid icon */
+  color: green;
+}
+
+/* Red Cross for invalid input */
+.form-control.invalid {
+  border-color: red;
+  box-shadow: 0 0 5px red;
+}
+
+.form-control.invalid + .invalid-icon {
+  display: block; /* Show the invalid icon */
+  color: red;
+}
+
+/* Hide icons by default */
+.valid-icon, .invalid-icon {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-control:focus + .valid-icon, .form-control:focus + .invalid-icon {
+  display: block;
+}
+.form-control::placeholder {
+  font-family: "PT Sans Caption",sans-serif;  
+  font-weight: 400;                /* Make the placeholder text bold */
+   color: #6C757D;
+  font-size: 16px;
+}
+.form-control:focus {
+  border-color: rgb(246, 106, 106);  /* Custom border color (for example, a light yellowish-brown) */
+  box-shadow: 0 0 0 0.25rem rgba(253, 186, 78, 0.3);  /* Custom box-shadow with orange color */
+  
+}
+
+.submit , .table {
+ 
+  font-family: 
+  "PT Sans Caption",sans-serif;
+  font-size: 16px;
   font-weight: 400;
 }
 
-#new-quote {
-  width: 250px;
-  height: 80px;
-  font-size: 13.3333px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400; 
-  background-color: rgb(0, 0, 255);
-} 
-
-#quote, #author {
-  font-size: 35px;
-  font-family: 'Times New Roman', Times, serif;
+.table {
+  background-color: #F8F9FA;
 }
+
+
+
+/* Visit button - Green background */
+.visit-btn {
+  background-color: #9eb23b; /* Green background */
+  color: white; /* White text */
+  padding: 8px 10px; /* Padding for button */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  width: 80px; /* Set fixed width */
+margin: 10px 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for background and transform */
+}
+
+.visit-btn:hover {
+  background-color: #8A9E23; /* Darker green on hover */
+  transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+/* Delete button - Red background */
+.delete-btn {
+  background-color: red; /* Red background */
+  color: white; /* White text */
+  padding: 8px 5px; /* Padding for button */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove border */
+  width: 80px; /* Set fixed width */
+  margin: 10px 10px;
+
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for background and transform */
+}
+
+.delete-btn:hover {
+  background-color: #D30820; /* Darker red on hover */
+}
+
+/* Optional: Adjust hover effects for icons */
+.visit-btn i, .delete-btn i {
+  margin-right: 3px; /* Space between icon and text */
+  font-size: 16px;
+}
+
+
+/* Default box-shadow for inputs */
+.form-control {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Optional: Apply green or red border when valid or invalid */
+.form-control:focus {
+  outline: none; /* Remove default outline */
+}
+
+
+/* Default input style */
+.form-control {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Valid input styles: Green box-shadow */
+.form-control.valid {
+  border-color: green;
+  box-shadow: 0 0 5px green; /* Green box-shadow */
+}
+
+/* Invalid input styles: Red box-shadow */
+.form-control.invalid {
+  border-color: red;
+  box-shadow: 0 0 5px red; /* Red box-shadow */
+}
+
+/* Label adjustment for validation */
+.label-valid {
+  color: green;
+  font-weight: bold;
+}
+
+.label-invalid {
+  color: red;
+  font-weight: bold;
+}
+
+
+.valid-icon {
+  font-size: 13px;
+  color: green;
+  display: none; 
+  transform: scale(1.2); 
+  transition: transform 0.3s ease; 
+}
+
+
+.invalid-icon {
+  font-size: 13px;
+  color: red; 
+  display: none; 
+  transform: scale(1.2); 
+  transition: transform 0.3s ease; 
+}
+
+
+.valid-icon, .invalid-icon {
+  border-radius: 50%; 
+  padding: 12px; 
+  background-color: transparent; 
+}
+
+.form-control.valid + .label .valid-icon {
+  display: inline; /
+}
+
+.form-control.invalid + .label .invalid-icon {
+  display: inline; 
+}
+
+
+
